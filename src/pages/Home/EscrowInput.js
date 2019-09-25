@@ -36,12 +36,12 @@ const EscrowInput = props => {
         <div>
           <Select className="mobile-select" defaultValue="비트베리">
             <Option value="비트베리">비트베리</Option>
-            <Option disabled value="none">
-              추후에 더 추가될예정입니다.
-            </Option>
           </Select>
         </div>
-        <Input placeholder="에스크로 URL 입력" />
+        <Input
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          placeholder="에스크로 URL 입력" />
         <div className="button-container">
           <Button type="primary" onClick={() => {
             if (input.length > 0) postOffer(input, () => setInput(""));
