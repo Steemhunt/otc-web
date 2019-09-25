@@ -18,7 +18,7 @@ const EscrowInput = props => {
           value={input}
           onChange={e => setInput(e.target.value)}
           addonBefore={selectBefore}
-          placeholder="ESCROW URL 입력"
+          placeholder="에스크로 URL 입력"
           addonAfter={
             <div
               className="add-button"
@@ -41,7 +41,7 @@ const EscrowInput = props => {
             </Option>
           </Select>
         </div>
-        <Input placeholder="ESCROW URL 입력" />
+        <Input placeholder="에스크로 URL 입력" />
         <div className="button-container">
           <Button type="primary">거래 추가</Button>
         </div>
