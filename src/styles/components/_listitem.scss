@@ -6,7 +6,7 @@
   background-color: #14151c;
   margin-top: 25px;
   color: #fff;
-  transition: all 0.2s ease-in-out;
+  transition: all 150ms ease-in-out;
   white-space: nowrap;
 
   button {
@@ -14,6 +14,10 @@
     border-color: #fff;
     background-color: transparent;
     color: #fff;
+    transition: none;
+    &:hover {
+      color: #14151c;
+    }
   }
 
   &.completed {
@@ -33,9 +37,7 @@
   }
 
   &:hover {
-    box-shadow: 0 0.55rem 1.25rem -0.55rem rgba(255, 255, 255, 0.5);
     transform: scale(1.01);
-
     .filled {
       width: 100%;
     }
