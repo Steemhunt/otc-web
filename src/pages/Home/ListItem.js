@@ -155,7 +155,7 @@ const ListItem = props => {
               </div>
             </div>
           </div>
-          {status === "waiting" && (
+          {status === "waiting" && timer !== -1 && (
             <a href={escrow_url} target="_blank" rel="noopener noreferrer">
               <Button>{selling_coin.symbol} 구매</Button>
             </a>
@@ -164,7 +164,7 @@ const ListItem = props => {
           {status === "completed" && (
             <div className="status-text">거래완료</div>
           )}
-          {status === "expired" && <div className="status-text">만료됨</div>}
+          {(status === "expired" || timer === -1) && <div className="status-text">만료됨</div>}
         </div>
       </div>
     </motion.div>
