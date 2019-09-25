@@ -73,7 +73,7 @@ const ListItem = props => {
       <div className="content">
         <div className="left-container">
           <div className="coin-info-container">
-            <img className="from-coin" alt="" />
+            <img className="from-coin" alt="" src={selling_coin.image}/>
             <div className="amount-container">
               <div className="amount">
                 {numeral(selling_amount).format("0,0.00")} {selling_coin.symbol}{" "}
@@ -86,7 +86,7 @@ const ListItem = props => {
           <img className="swap-img" src={swapImg} alt="" />
 
           <div className="coin-info-container right">
-            <img className="to-coin" alt="" />
+            <img className="to-coin" alt="" src={buying_coin.image}/>
             <div className="amount-container">
               <div className="amount">
                 {numeral(buying_amount).format("0,0.00")} {buying_coin.symbol}{" "}
