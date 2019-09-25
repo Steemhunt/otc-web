@@ -107,6 +107,9 @@
       flex-direction: column;
       align-items: flex-start;
       width: auto;
+      img {
+        margin-bottom: 10px;
+      }
 
       &.right {
         align-items: flex-end;
