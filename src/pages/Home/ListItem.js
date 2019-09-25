@@ -30,9 +30,14 @@ const ListItem = props => {
 
       if (diff < 0 || status !== "waiting") {
         clearInterval(tickTime);
-        setTimer("종료");
+        setTimer(-1);
       } else {
-        setTimer(moment.duration(diff, "milliseconds").format("hh:mm:ss"));
+        setTimer(
+          moment
+            .duration(diff, "milliseconds")
+            .locale("ko")
+            .format("hh:mm:ss")
+        );
       }
     }
 
@@ -40,7 +45,7 @@ const ListItem = props => {
     tick();
 
     return () => tickTime && clearInterval(tickTime);
-  }, []);
+  }, [status]);
 
   let sellingUSD =
     selling_coin.last_price > 0 && selling_amount * selling_coin.last_price;
@@ -67,7 +72,8 @@ const ListItem = props => {
       initial="hidden"
       animate="visible"
       transition={{ ease: "easeIn", duration: 0.2, delay: 0.1 * index }}
-      className={`list-item ${status !== "waiting" && "completed"}`}
+      className={`list-item ${(status !== "waiting" || timer === -1) &&
+        "completed"}`}
     >
       <div className={`gradient-bar ${status !== "waiting" && "completed"}`}>
         {/*<div className="filled" />*/}
@@ -129,7 +135,7 @@ const ListItem = props => {
               <div className="text-grey side-header">거래차익:</div>
             </div>
             <div className="values">
-              <div className="timer">{timer}</div>
+              <div className="timer">{timer === -1 ? "종료" : timer}</div>
               <div
                 className={`difference ${diff > 0 && "plus"} ${diff < 0 &&
                   "minus"}`}
@@ -151,7 +157,7 @@ const ListItem = props => {
           </div>
           {status === "waiting" && (
             <a href={escrow_url} target="_blank" rel="noopener noreferrer">
-              <Button>거래하기</Button>
+              <Button>{selling_coin.symbol} 구매</Button>
             </a>
           )}
           {status === "canceled" && <div className="status-text">취소됨</div>}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import api from "utils/api";
+import { notification } from "antd";
 import { handleErrorMessage } from "utils/errorMessage";
 
 const HomeContext = React.createContext();
@@ -32,6 +33,7 @@ class HomeProvider extends Component {
     api
       .get("/offers.json")
       .then(offers => {
+        console.log(offers);
         this.setState({ offers });
       })
       .catch(handleErrorMessage)
@@ -43,6 +45,7 @@ class HomeProvider extends Component {
     api
       .post("/offers.json", { offer: { escrow_url } })
       .then(() => {
+        notification["success"]({ message: "등록 되었습니다" });
         cb && cb();
       })
       .catch(handleErrorMessage)
