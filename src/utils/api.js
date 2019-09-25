@@ -50,8 +50,6 @@ function request(
   }
   var url = API_ROOT + path + qs;
 
-  console.log("url", url);
-
   return fetch(url, { method, headers, body })
     .then(parseJSON)
     .then(checkError)
@@ -86,24 +84,16 @@ async function uploadFormData(
 }
 
 export default {
-  get: (
-    path,
-    params,
-    shouldAuthenticate = false,
-    callback = defaultCallback
-  ) => request("GET", path, params, shouldAuthenticate, callback),
+  get: (path, params, shouldAuthenticate = false, callback = defaultCallback) =>
+    request("GET", path, params, shouldAuthenticate, callback),
   post: (
     path,
     params,
     shouldAuthenticate = false,
     callback = defaultCallback
   ) => request("POST", path, params, shouldAuthenticate, callback),
-  put: (
-    path,
-    params,
-    shouldAuthenticate = false,
-    callback = defaultCallback
-  ) => request("PUT", path, params, shouldAuthenticate, callback),
+  put: (path, params, shouldAuthenticate = false, callback = defaultCallback) =>
+    request("PUT", path, params, shouldAuthenticate, callback),
   delete: (
     path,
     params,

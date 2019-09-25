@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
 import HomeContext from "contexts/HomeContext";
 import AppContext from "contexts/AppContext";
 import { Modal, Icon } from "antd";
@@ -26,7 +25,6 @@ const ModalBody = props => {
   const { data } = props;
   if (!data) return null;
   let {
-    image,
     symbol,
     price_change_24h,
     last_price,
@@ -42,7 +40,6 @@ const ModalBody = props => {
   const priceChangePercentage =
     price_change_24h / (last_price - price_change_24h);
 
-  console.log("price", priceChangePercentage);
 
   Object.entries(urls).forEach(data => {
     const [key, url] = data;
@@ -54,7 +51,6 @@ const ModalBody = props => {
 
   let noData = _.isEmpty(urls) && _.isEmpty(description);
 
-  console.log(data);
   return (
     <div className="token-modal-body">
       <div className="modal-title">

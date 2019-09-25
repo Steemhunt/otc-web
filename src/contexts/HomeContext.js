@@ -33,7 +33,6 @@ class HomeProvider extends Component {
     api
       .get("/offers.json")
       .then(offers => {
-        console.log(offers);
         this.setState({ offers });
       })
       .catch(handleErrorMessage)

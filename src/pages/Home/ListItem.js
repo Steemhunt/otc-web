@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import swapImg from "assets/images/swap.svg";
 import numeral from "numeral";
 import { Icon, Button } from "antd";
@@ -45,7 +44,7 @@ const ListItem = props => {
     tick();
 
     return () => tickTime && clearInterval(tickTime);
-  }, [status]);
+  }, []); //eslint-disable-line
 
   let sellingUSD =
     selling_coin.last_price > 0 && selling_amount * selling_coin.last_price;

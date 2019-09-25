@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import api from "utils/api";
 import { handleErrorMessage } from "utils/errorMessage";
-import {getToken, setToken} from "utils/token";
+import {setToken} from "utils/token";
 
 const AuthContext = React.createContext();
 const { Provider, Consumer } = AuthContext;
@@ -38,8 +38,7 @@ class AuthProvider extends Component {
   logout = () => {};
 
   refreshSession = () => {
-    const token = getToken();
-    console.log("token", token);
+    // const token = getToken();
   }
 
   updateState = (key, value) => {
