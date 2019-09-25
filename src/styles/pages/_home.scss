@@ -3,13 +3,22 @@
   padding-top: 160px;
   padding-bottom: 160px;
 
+  @include responsive(mobile) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
   .title {
     line-height: 1.25;
     font-size: 3.125rem;
     font-weight: 500;
     color: #fff;
     word-break: keep-all;
-    margin-top: 60px;
+    margin-top: 3rem;
+
+    @include responsive(mobile) {
+      font-size: 2.4rem;
+    }
   }
 
   .logo-container {

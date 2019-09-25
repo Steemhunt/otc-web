@@ -10,7 +10,7 @@
     border-radius: 0;
     @include responsive(mobile) {
       border-bottom: 1px solid #fff;
-      margin-top: 20px;
+      margin-top: 0.825rem;
     }
   }
 
@@ -37,7 +37,7 @@
     @include responsive(mobile) {
       width: 200px;
       background-color: transparent;
-      margin-top: 60px;
+      margin-top: 2rem;
       border-radius: 0;
     }
   }
@@ -76,7 +76,7 @@
     color: #000;
     border-radius: 0;
     border: none;
-    margin-top: 20px;
+    margin-top: 0.825rem;
     background-color: #fff;
   }
 }
