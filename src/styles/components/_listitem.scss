@@ -9,6 +9,13 @@
   transition: all 0.2s ease-in-out;
   white-space: nowrap;
 
+  button {
+    border-radius: 0;
+    border-color: #fff;
+    background-color: transparent;
+    color: #fff;
+  }
+
   &.completed {
     opacity: 0.4;
   }
@@ -105,6 +112,9 @@
       }
     }
     @include responsive(mobile) {
+      font-size: 14px;
+    }
+    @include responsive(tiny) {
       font-size: 12px;
     }
   }

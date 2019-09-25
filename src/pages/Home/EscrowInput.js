@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import HomeContext from "contexts/HomeContext";
-import { Input, Select } from "antd";
+import { Button, Input, Select } from "antd";
 const { Option } = Select;
 
 const selectBefore = (
@@ -18,7 +18,7 @@ const EscrowInput = props => {
           value={input}
           onChange={e => setInput(e.target.value)}
           addonBefore={selectBefore}
-          placeholder="비트베리 ESCROW URL 입력"
+          placeholder="ESCROW URL 입력"
           addonAfter={
             <div
               className="add-button"
@@ -33,11 +33,18 @@ const EscrowInput = props => {
       </div>
 
       <div className="show-on-mobile">
-        <Select className="mobile-select" defaultValue="비트베리">
-          <Option value="비트베리">비트베리</Option>
-          <Option disabled value="none">추후에 더 추가될예정입니다.</Option>
-        </Select>
-        <Input placeholder="비트베리 ESCROW URL 입력" />
+        <div>
+          <Select className="mobile-select" defaultValue="비트베리">
+            <Option value="비트베리">비트베리</Option>
+            <Option disabled value="none">
+              추후에 더 추가될예정입니다.
+            </Option>
+          </Select>
+        </div>
+        <Input placeholder="ESCROW URL 입력" />
+        <div className="button-container">
+          <Button type="primary">거래 추가</Button>
+        </div>
       </div>
     </div>
   );

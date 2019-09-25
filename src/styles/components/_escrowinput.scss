@@ -1,4 +1,7 @@
 .escrow-input {
+  @include responsive(tiny) {
+    text-align: center;
+  }
   input {
     height: 48px;
     background-color: transparent;
@@ -7,6 +10,7 @@
     border-radius: 0;
     @include responsive(mobile) {
       border-bottom: 1px solid #fff;
+      margin-top: 20px;
     }
   }
 
@@ -28,7 +32,8 @@
     @include responsive(mobile) {
       width: 200px;
       background-color: transparent;
-      margin-top: 40px;
+      margin-top: 60px;
+      border-radius: 0;
     }
   }
 
@@ -52,5 +57,21 @@
     // font-weight: bold;
     background-color: transparent;
     padding: 0;
+  }
+
+  .button-container {
+    text-align: right;
+    @include responsive(tiny) {
+      text-align: center;
+    }
+  }
+
+  button {
+    min-width: 200px;
+    color: #000;
+    border-radius: 0;
+    border: none;
+    margin-top: 20px;
+    background-color: #fff;
   }
 }
