@@ -2,9 +2,12 @@ import React, { useEffect, useContext } from "react";
 import HomeContext from "contexts/HomeContext";
 import { Icon } from "antd";
 import ListItem from "./ListItem";
+import _ from 'lodash';
 
 const OfferList = props => {
-  const { offers, loading, fetchOffers, updateState } = useContext(HomeContext);
+  const { query, offers, loading, fetchOffers, updateState } = useContext(
+    HomeContext
+  );
 
   useEffect(() => {
     fetchOffers();
@@ -15,14 +18,26 @@ const OfferList = props => {
       {loading ? (
         <Icon className="loading" type="loading" />
       ) : (
-        offers.map((offer, index) => (
-          <ListItem
-            key={index}
-            index={index}
-            onTokenClick={tokenInformation => updateState({ tokenInformation })}
-            {...offer}
-          />
-        ))
+        offers
+          .filter(item => {
+            if (query.length === 0) return true;
+            const { buying_coin, selling_coin } = item;
+
+            return (
+              _.lowerCase(buying_coin.symbol).includes(_.lowerCase(query)) ||
+              _.lowerCase(selling_coin.symbol).includes(_.lowerCase(query))
+            );
+          })
+          .map((offer, index) => (
+            <ListItem
+              key={index}
+              index={index}
+              onTokenClick={tokenInformation =>
+                updateState({ tokenInformation })
+              }
+              {...offer}
+            />
+          ))
       )}
     </div>
   );

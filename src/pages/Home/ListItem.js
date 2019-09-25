@@ -69,8 +69,8 @@ const ListItem = props => {
       transition={{ ease: "easeIn", duration: 0.2, delay: 0.1 * index }}
       className={`list-item ${status !== "waiting" && "completed"}`}
     >
-      <div className="gradient-bar">
-        <div className="filled" />
+      <div className={`gradient-bar ${status !== "waiting" && "completed"}`}>
+        {/*<div className="filled" />*/}
       </div>
       <div className="content">
         <div className="left-container">
@@ -136,8 +136,12 @@ const ListItem = props => {
               >
                 {diff ? (
                   <>
-                    {diff > 0 && "+"}{numeral(diff).format("$0,0.00")}
-                    <span>({diffPercentage > 0 && "+"}{numeral(diffPercentage).format("0,0.00%")})</span>
+                    {diff > 0 && "+"}
+                    {numeral(diff).format("$0,0.00")}
+                    <span>
+                      ({diffPercentage > 0 && "+"}
+                      {numeral(diffPercentage).format("0,0.00%")})
+                    </span>
                   </>
                 ) : (
                   "-"

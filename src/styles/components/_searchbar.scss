@@ -1,0 +1,12 @@
+.search-bar {
+  input {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px  solid #fff;
+    color: $primary;
+  }
+  .ant-input-search-icon {
+    color: white;
+  }
+}

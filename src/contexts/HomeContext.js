@@ -9,7 +9,8 @@ class HomeProvider extends Component {
   state = {
     loading: false,
     tokenInformation: null,
-    offers: []
+    offers: [],
+    query: ""
   };
 
   componentDidMount() {

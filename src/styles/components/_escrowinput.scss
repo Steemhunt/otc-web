@@ -14,6 +14,10 @@
     }
   }
 
+  input::placeholder {
+    color: rgba(255, 255, 255, .2);
+  }
+
   .ant-input-group-wrapper {
     border: 1px solid #fff;
   }
@@ -28,6 +32,7 @@
       fill: #fff;
     }
   }
+
   .ant-select-selection {
     @include responsive(mobile) {
       width: 200px;
