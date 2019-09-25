@@ -43,7 +43,11 @@ const EscrowInput = props => {
         </div>
         <Input placeholder="에스크로 URL 입력" />
         <div className="button-container">
-          <Button type="primary">거래 추가</Button>
+          <Button type="primary" onClick={() => {
+            if (input.length > 0) postOffer(input, () => setInput(""));
+          }}>
+            거래 추가
+          </Button>
         </div>
       </div>
     </div>
