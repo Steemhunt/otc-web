@@ -144,6 +144,9 @@
 
   .swap-img {
     margin: 0 32px;
+    @include responsive(mobile) {
+      margin: 0;
+    }
   }
 
   .difference {
