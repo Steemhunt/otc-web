@@ -1,36 +1,29 @@
-import React, { useEffect, useContext } from "react";
-import HomeContext from "contexts/HomeContext";
+import React, { useEffect } from "react";
 import logo from "assets/images/logo.svg";
 import { scrollTop } from "utils/scroller";
-import { Icon } from "antd";
-import ListItem from "./ListItem";
 import EscrowInput from "./EscrowInput";
+import TokenModal from "./TokenModal";
+import OfferList from "./OfferList";
 
 const Home = props => {
-  const { offers, loading, fetchOffers } = useContext(HomeContext);
-
   useEffect(() => {
-    fetchOffers();
     scrollTop();
-  }, [fetchOffers]);
+  }, []);
 
   return (
     <div className="home">
       <div className="padded-container content">
-        <img className="logo" src={logo} alt="" />
-        <div className="title">토큰 장외거래 리스트</div>
-        <EscrowInput />
-
-        <div className="list">
-          {loading ? (
-            <Icon className="loading" type="loading" />
-          ) : (
-            offers.map((offer, index) => (
-              <ListItem key={index} index={index} {...offer} />
-            ))
-          )}
+        <div className="logo-container">
+          <img className="logo" src={logo} alt="" />
+          <div className="squirrel">다람쥐 OTC</div>
         </div>
+        <div className="title">
+          토큰 장외거래 리스트
+        </div>
+        <EscrowInput />
+        <OfferList />
       </div>
+      <TokenModal />
     </div>
   );
 };

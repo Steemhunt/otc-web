@@ -4,15 +4,30 @@
   padding-bottom: 160px;
 
   .title {
+    line-height: 1.25;
     font-size: 3.125rem;
-    font-weight: bold;
+    font-weight: 500;
     color: #fff;
-    margin-top: 60px;
     word-break: keep-all;
+    margin-top: 60px;
+  }
+
+  .logo-container {
+    position: relative;
+  }
+  .squirrel {
+    position: absolute;
+    bottom: -4px;
+    background-image: linear-gradient(to bottom, #04a5c0, $primary);
+    font-size: .9rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
   }
 
   .list {
-    margin-top: 100px;
+    margin-top: 60px;
   }
 
   .loading {

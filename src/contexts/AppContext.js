@@ -5,7 +5,9 @@ const AppContext = React.createContext();
 const { Provider, Consumer } = AppContext;
 
 class AppProvider extends Component {
-  state = {};
+  state = {
+    language: "ko"
+  };
 
   componentDidMount() {}
 

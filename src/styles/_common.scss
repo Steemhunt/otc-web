@@ -165,7 +165,7 @@ a {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #242424;
+  background-color: #101117;
   color: #fff;
 }
 
@@ -184,8 +184,8 @@ a {
   }
 
   @include responsive(mobile) {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -201,4 +201,9 @@ a {
   @include responsive(mobile) {
     display: none;
   }
+}
+
+.ellipsis {white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

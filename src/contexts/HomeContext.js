@@ -8,20 +8,31 @@ const { Provider, Consumer } = HomeContext;
 class HomeProvider extends Component {
   state = {
     loading: false,
+    tokenInformation: null,
     offers: []
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.fetchOffers(false);
+    }, 1000 * 30);
+  }
 
-  updateState = (key, value) => {
-    this.setState({ [key]: value });
+  componentWillUnmount() {
+    this.interval && clearInterval(this.interval);
+  }
+
+  updateState = state => {
+    this.setState(state);
   };
 
-  fetchOffers = () => {
-    this.setState({ loading: true });
+  fetchOffers = (showLoading = true) => {
+    showLoading && this.setState({ loading: true });
     api
       .get("/offers.json")
-      .then(offers => this.setState({ offers }))
+      .then(offers => {
+        this.setState({ offers });
+      })
       .catch(handleErrorMessage)
       .then(() => this.setState({ loading: false }));
   };

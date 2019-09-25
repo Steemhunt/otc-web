@@ -1,0 +1,122 @@
+.token-modal {
+  max-width: 100vw !important;
+  word-break: keep-all;
+  .ant-modal {
+    // top: 0;
+    // min-width: 800px;
+    max-width: 100vw;
+  }
+  .ant-modal-content {
+    margin: 0;
+    // height: 100vh;
+    padding: 60px;
+    border-radius: 0;
+    background-color: #111111;
+    color: white;
+    svg {
+      fill: white;
+    }
+    @include responsive(mobile) {
+      padding: 60px 10px;
+    }
+  }
+
+  .token-modal-body {
+    .modal-title {
+      display: flex;
+      align-items: center;
+      font-size: 2.125rem;
+      font-weight: bold;
+      @include responsive(mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .modal-img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        padding: 4px;
+        border-radius: 999px;
+        margin-right: 10px;
+        background-color: #fff;
+        @include responsive(mobile) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    .total-supply {
+      margin-top: 10px;
+      font-size: 0.875rem;
+      color: grey;
+    }
+
+    .description {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255 ,255, .2);
+    }
+
+    .urls-container {
+      display: flex;
+      white-space: nowrap;
+      margin: 40px 0;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255 ,255, .2);
+
+      .keys {
+        margin-right: 20px;
+      }
+
+      .url {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .price-change-container {
+      margin-top: 20px;
+      .last-price {
+        font-size: 1.5rem;
+      }
+
+      .usd {
+        font-size: 0.75rem;
+      }
+
+      .price-change-percentage {
+        margin-left: 4px;
+      }
+
+      .plus {
+        color: $green;
+        svg {
+          fill: $green;
+        }
+      }
+
+      .minus {
+        color: $red;
+        svg {
+          fill: $red;
+        }
+      }
+    }
+
+    .no-data {
+      border-top: 1px solid rgba(255, 255 ,255, .2);
+      margin-top: 40px;
+      padding-top: 40px;
+    }
+  }
+}
+.ant-modal-wrap {
+  overflow: hidden !important;
+}
+iframe {
+}
+.cg-container {
+  border: none;
+  color: blue !important;
+}

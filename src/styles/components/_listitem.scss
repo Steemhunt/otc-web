@@ -9,6 +9,10 @@
   transition: all 150ms ease-in-out;
   white-space: nowrap;
 
+  &.completed {
+    opacity: 0.4 !important;
+  }
+
   button {
     border-radius: 0;
     border-color: #fff;
@@ -18,10 +22,6 @@
     &:hover {
       color: #14151c;
     }
-  }
-
-  &.completed {
-    opacity: 0.4;
   }
 
   .gradient-bar {
@@ -41,6 +41,12 @@
     .filled {
       width: 100%;
     }
+  }
+
+  .status-text {
+    width: 84px;
+    text-align: center;
+    font-size: 14px;
   }
 
   .content {
@@ -140,7 +146,9 @@
   .to-coin {
     width: 40px;
     height: 40px;
-    background-color: #eee;
+    padding: 4px;
+    object-fit: contain;
+    background-color: #fff;
     border-radius: 50%;
   }
 
@@ -155,17 +163,34 @@
     }
   }
 
+  .side-header {
+    @include responsive(mobile) {
+      font-size: 0.875rem;
+    }
+  }
+
   .difference {
+    @include responsive(mobile) {
+      font-size: 0.875rem;
+    }
     &.plus {
-      color: blue;
+      color: $green;
     }
 
     &.minus {
-      color: red;
+      color: $red;
+    }
+
+    span {
+      font-size: 0.75rem;
+      margin-left: 4px;
     }
   }
 
   .timer {
     margin-right: 16px;
+    @include responsive(mobile) {
+      font-size: 0.875rem;
+    }
   }
 }
