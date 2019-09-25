@@ -1,0 +1,56 @@
+.escrow-input {
+  input {
+    height: 48px;
+    background-color: transparent;
+    border: none;
+    color: $primary;
+    border-radius: 0;
+    @include responsive(mobile) {
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  .ant-input-group-wrapper {
+    border: 1px solid #fff;
+  }
+
+  .input-url {
+    margin-top: 40px;
+  }
+
+  .ant-select {
+    color: #fff;
+    svg {
+      fill: #fff;
+    }
+  }
+  .ant-select-selection {
+    @include responsive(mobile) {
+      width: 200px;
+      background-color: transparent;
+      margin-top: 40px;
+    }
+  }
+
+  .add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    width: 100%;
+    height: 48px;
+    // background-image: linear-gradient(to right, #04a5c0, #f9f981);
+    background-color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .ant-input-group-addon {
+    border-radius: 0 !important;
+    border: none;
+    width: 140px;
+    // font-weight: bold;
+    background-color: transparent;
+    padding: 0;
+  }
+}

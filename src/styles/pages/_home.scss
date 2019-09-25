@@ -1,0 +1,31 @@
+.home {
+  min-height: 100vh;
+  padding-top: 160px;
+  padding-bottom: 160px;
+
+  .title {
+    font-size: 3.125rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 60px;
+    word-break: keep-all;
+  }
+
+  button {
+    border-radius: 0;
+    border-color: #fff;
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .list {
+    margin-top: 100px;
+  }
+
+  .loading {
+    color: #fff;
+    font-size: 24px;
+    width: 100%;
+    margin: auto;
+  }
+}
