@@ -160,11 +160,14 @@ const ListItem = props => {
               <Button>{selling_coin.symbol} 구매</Button>
             </a>
           )}
-          {status === "canceled" && <div className="status-text">취소됨</div>}
           {status === "completed" && (
             <div className="status-text">거래완료</div>
           )}
-          {(status === "expired" || timer === -1) && <div className="status-text">만료됨</div>}
+
+          {status === "canceled" && <div className="status-text">취소됨</div>}
+          {(status === "expired" || (status === "waiting" && timer === -1)) && (
+            <div className="status-text">만료됨</div>
+          )}
         </div>
       </div>
     </motion.div>

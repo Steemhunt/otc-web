@@ -1,6 +1,7 @@
 .token-modal {
   max-width: 100vw !important;
   word-break: keep-all;
+
   .ant-modal {
     // top: 0;
     // min-width: 800px;
@@ -9,8 +10,9 @@
   .ant-modal-content {
     margin: 0;
     // height: 100vh;
-    padding: 60px;
+    padding: 50px;
     border-radius: 0;
+    min-width: 620px;
     background-color: #111111;
     color: white;
     svg {
@@ -54,7 +56,7 @@
     .description {
       margin-top: 40px;
       padding-top: 40px;
-      border-top: 1px solid rgba(255, 255 ,255, .2);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .urls-container {
@@ -62,7 +64,6 @@
       white-space: nowrap;
       margin: 40px 0;
       padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255, 255 ,255, .2);
 
       .keys {
         margin-right: 20px;
@@ -77,6 +78,7 @@
 
     .price-change-container {
       margin-top: 20px;
+
       .last-price {
         font-size: 1.5rem;
       }
@@ -88,24 +90,10 @@
       .price-change-percentage {
         margin-left: 4px;
       }
-
-      .plus {
-        color: $green;
-        svg {
-          fill: $green;
-        }
-      }
-
-      .minus {
-        color: $red;
-        svg {
-          fill: $red;
-        }
-      }
     }
 
     .no-data {
-      border-top: 1px solid rgba(255, 255 ,255, .2);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
       margin-top: 40px;
       padding-top: 40px;
     }
@@ -114,9 +102,17 @@
 .ant-modal-wrap {
   overflow: hidden !important;
 }
-iframe {
+
+.plus {
+  color: $green !important;
+  svg {
+    fill: $green !important;
+  }
 }
-.cg-container {
-  border: none;
-  color: blue !important;
+
+.minus {
+  color: $red !important;
+  svg {
+    fill: $red !important;
+  }
 }

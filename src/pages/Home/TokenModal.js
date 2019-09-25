@@ -42,12 +42,14 @@ const ModalBody = props => {
   const priceChangePercentage =
     price_change_24h / (last_price - price_change_24h);
 
-  console.log(priceChangePercentage);
+  console.log("price", priceChangePercentage);
 
   Object.entries(urls).forEach(data => {
     const [key, url] = data;
-    urlKeys.push(key);
-    urlData.push(url);
+    if (key && url) {
+      urlKeys.push(key);
+      urlData.push(url);
+    }
   });
 
   let noData = _.isEmpty(urls) && _.isEmpty(description);
@@ -71,8 +73,8 @@ const ModalBody = props => {
           ${last_price} <span className="usd">USD </span>
         </div>
         <div
-          className={`price-change ${priceChangePercentage < 0 &&
-            "minus"} ${priceChangePercentage > 0 && "plus"}"`}
+          className={`price-change ${priceChangePercentage > 0 &&
+            "plus"} ${priceChangePercentage < 0 && "minus"} `}
         >
           {!Number.isNaN(priceChangePercentage) && (
             <Icon
