@@ -126,7 +126,7 @@ const ModalBody = props => {
 
       {coingecko_id && (
         <a
-          href={`https://www.coingecko.com/en/coins/${coingecko_id}`}
+          href={`https://www.coingecko.com/en/coins/${coingecko_id}/trading_exchanges`}
           target="_blank"
           rel="noopener norefer"
         >
