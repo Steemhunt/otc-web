@@ -84,9 +84,9 @@ const ListItem = props => {
       initial="hidden"
       animate="visible"
       transition={{ ease: "easeIn", duration: 0.2, delay: 0.1 * index }}
-      className={`list-item ${status}`}
+      className={`list-item ${clientStatus}`}
     >
-      <div className={`gradient-bar ${status}`}>
+      <div className={`gradient-bar ${clientStatus}`}>
         {/*<div className="filled" />*/}
       </div>
       <div className="content">
@@ -181,7 +181,7 @@ const ListItem = props => {
               </div>
             </div>
           </div>
-          {status === "waiting" ? (
+          {clientStatus === "waiting" ? (
             <a href={escrow_url} target="_blank" rel="noopener noreferrer">
               <Button>
                 <Trans i18nKey="purchase_coin">
@@ -190,8 +190,8 @@ const ListItem = props => {
               </Button>
             </a>
           ) : (
-            <div className={`status-text ${status}`}>
-              {t(`status_${status}`)}
+            <div className={`status-text ${clientStatus}`}>
+              {t(`status_${clientStatus}`)}
             </div>
           )}
         </div>
