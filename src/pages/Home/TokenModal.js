@@ -50,7 +50,7 @@ const ModalBody = props => {
           alt=""
         />
         <div>
-          {symbol} {name[language]}
+          {symbol} <span className="project-name">{name[language]}</span>
         </div>
       </div>
 
