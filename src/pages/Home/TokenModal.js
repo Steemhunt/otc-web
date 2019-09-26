@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import HomeContext from "contexts/HomeContext";
-import { Modal, Icon } from "antd";
+import { Button, Modal, Icon } from "antd";
 import numeral from "numeral";
 import _ from "lodash";
 import { Trans, useTranslation } from "react-i18next";
@@ -18,6 +18,7 @@ const ModalBody = props => {
     name,
     description,
     total_supply,
+    coingecko_id,
     urls
   } = data;
 
@@ -36,6 +37,8 @@ const ModalBody = props => {
   });
 
   let noData = _.isEmpty(urls) && _.isEmpty(description);
+  console.log(last_price, price_change_24h);
+  let unlisted = numeral(last_price).value() === 0;
 
   return (
     <div className="token-modal-body">
@@ -52,17 +55,24 @@ const ModalBody = props => {
 
       <div className="price-change-container">
         <div className="last-price">
-          ${last_price} <span className="usd">USD </span>
+          {unlisted ? (
+            t("unlisted")
+          ) : (
+            <>
+              ${last_price} <span className="usd">USD </span>
+            </>
+          )}
         </div>
         <div
           className={`price-change ${priceChangePercentage > 0 &&
             "plus"} ${priceChangePercentage < 0 && "minus"} `}
         >
-          {!Number.isNaN(priceChangePercentage) && priceChangePercentage !== 0 && (
-            <Icon
-              type={priceChangePercentage > 0 ? "caret-up" : "caret-down"}
-            />
-          )}
+          {!Number.isNaN(priceChangePercentage) &&
+            priceChangePercentage !== 0 && (
+              <Icon
+                type={priceChangePercentage > 0 ? "caret-up" : "caret-down"}
+              />
+            )}
           {price_change_24h}
           <span className="price-change-percentage">
             ({numeral(priceChangePercentage).format("0,0.00%")})
@@ -72,6 +82,8 @@ const ModalBody = props => {
           Total Supply: {numeral(total_supply).format("0,0")} {symbol}
         </div>
       </div>
+
+      <hr />
 
       {description[language] && (
         <div className="description">{description[language]}</div>
@@ -110,6 +122,18 @@ const ModalBody = props => {
             으로 요청해주시기 바랍니다.
           </Trans>
         </div>
+      )}
+
+      {coingecko_id && (
+        <a
+          href={`https://www.coingecko.com/en/coins/${coingecko_id}`}
+          target="_blank"
+          rel="noopener norefer"
+        >
+          <Button type="primary" className="exchange-btn">
+            상장된 거래소 보기
+          </Button>
+        </a>
       )}
     </div>
   );

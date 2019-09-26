@@ -51,16 +51,11 @@
       }
     }
 
+    .unlisted,
     .total-supply {
       margin-top: 10px;
       font-size: 0.875rem;
       color: grey;
-    }
-
-    .description {
-      margin-top: 40px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .urls-container {
@@ -80,12 +75,12 @@
       }
     }
 
+    .last-price {
+      font-size: 1.5rem;
+    }
+
     .price-change-container {
       margin-top: 20px;
-
-      .last-price {
-        font-size: 1.5rem;
-      }
 
       .usd {
         font-size: 0.75rem;
@@ -97,9 +92,22 @@
     }
 
     .no-data {
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
       margin-top: 40px;
       padding-top: 40px;
+    }
+
+    hr {
+      color: 1px solid rgba(255, 255, 255, 0.2);
+      margin: 40px 0;
+    }
+
+  }
+
+  .exchange-btn {
+    color: #101117;
+    border-radius: 0;
+    &:hover {
+      color: #000;
     }
   }
 }
