@@ -7,6 +7,12 @@ import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
 import _ from "lodash";
 
+function decimalFormat(symbol) {
+  if (symbol === "ETH" || symbol === "BTC") return "0,0.000000";
+
+  return "0,0.00";
+}
+
 const ListItem = props => {
   const { t } = useTranslation();
   const [timer, setTimer] = useState("00:00:00");
@@ -91,7 +97,10 @@ const ListItem = props => {
             />
             <div className="amount-container">
               <div className="amount">
-                {numeral(selling_amount).format("0,0.00")} {selling_coin.symbol}{" "}
+                {numeral(selling_amount).format(
+                  decimalFormat(selling_coin.symbol)
+                )}{" "}
+                {selling_coin.symbol}{" "}
                 <Icon
                   type="info-circle"
                   onClick={() => onTokenClick(selling_coin)}
@@ -119,7 +128,10 @@ const ListItem = props => {
             />
             <div className="amount-container">
               <div className="amount">
-                {numeral(buying_amount).format("0,0.00")} {buying_coin.symbol}{" "}
+                {numeral(buying_amount).format(
+                  decimalFormat(buying_coin.symbol)
+                )}{" "}
+                {buying_coin.symbol}{" "}
                 <Icon
                   type="info-circle"
                   onClick={() => onTokenClick(buying_coin)}
