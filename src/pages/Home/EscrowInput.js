@@ -21,7 +21,7 @@ const EscrowInput = props => {
 
   const onChange = e => {
     let str = e.target.value;
-    let regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+    let regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/;
     let match = str.match(regex);
     let finalString = match && match.length > 0 && match[0];
     if (finalString) {
