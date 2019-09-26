@@ -98,7 +98,10 @@ const ListItem = props => {
                 />
               </div>
               <div className="usd">
-                ({sellingUSD ? numeral(sellingUSD).format("$0,0.00") : "비상장"}
+                (
+                {sellingUSD
+                  ? numeral(sellingUSD).format("$0,0.00")
+                  : t("unlisted")}
                 )
               </div>
             </div>

@@ -36,8 +36,9 @@ const ModalBody = props => {
     }
   });
 
-  let noData = _.isEmpty(urls) && _.isEmpty(description);
-  console.log(last_price, price_change_24h);
+  let noData =
+    _.values(urls).filter(i => i !== null).length === 0 &&
+    _.values(description).filter(i => i !== null).length === 0;
   let unlisted = numeral(last_price).value() === 0;
 
   return (
@@ -111,27 +112,28 @@ const ModalBody = props => {
       {noData && (
         <div className="no-data">
           <Trans i18nKey="no_data">
-            데이터가 존재하지않습니다. 만약 데이터 추가를 원하시면
-            <a
+            데이터가 존재하지않습니다. 만약 데이터 추가를 원하시면 밑 이메일 주소로 요청해주시기 바랍니다.
+          </Trans>
+          {" "}
+           <a
               href="mailto:admin@hunt.town"
               target="_blank"
               rel="noopener noreferrer"
             >
               admin@hunt.town
-            </a>{" "}
-            으로 요청해주시기 바랍니다.
-          </Trans>
+            </a>
+            .
         </div>
       )}
 
       {coingecko_id && (
         <a
-          href={`https://www.coingecko.com/en/coins/${coingecko_id}`}
+          href={`https://www.coingecko.com/en/coins/${coingecko_id}/trading_exchanges`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <Button type="primary" className="exchange-btn">
-            상장된 거래소 보기
+            {t("exchange_btn")}
           </Button>
         </a>
       )}
@@ -146,6 +148,7 @@ const TokenModal = props => {
       visible={tokenInformation !== null}
       onCancel={() => updateState({ tokenInformation: null })}
       wrapClassName="token-modal"
+      closeIcon={<Icon type="close"/>}
       footer={null}
       closable={true}
       maskClosable={true}

@@ -6,6 +6,7 @@
     // top: 0;
     // min-width: 800px;
     max-width: 100vw;
+    min-height: 100vh;
     @include responsive(mobile) {
       top: 0;
       margin: 0;
@@ -104,6 +105,7 @@
   }
 
   .exchange-btn {
+    min-width: auto !important;
     color: #101117;
     border-radius: 0;
     &:hover {

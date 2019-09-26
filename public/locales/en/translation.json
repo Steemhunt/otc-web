@@ -1,4 +1,4 @@
-  {
+{
   "drg_otc": "DRG OTC",
   "app_description": "OTC Token Trading",
   "search_coin": "Search Coin",
@@ -25,5 +25,6 @@
   "twitter": "Twitter",
   "steemit": "Steemit",
   "reddit": "Reddit",
-  "no_data": "Information for this coin doesn't exist. If you want it added, please contact <a>admin@hunt.town</a>."
+  "no_data": "Information for this coin doesn't exist. If you want it added, please contact",
+  "exchange_btn": "Listed Exchanges"
 }
