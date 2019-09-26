@@ -8,6 +8,7 @@
   color: #fff;
   transition: all 150ms ease-in-out;
   white-space: nowrap;
+  overflow: hidden;
 
   &.completed {
     opacity: 0.4 !important;
@@ -22,6 +23,11 @@
     transition: none;
     &:hover {
       color: #14151c;
+    }
+
+    @include responsive(tiny) {
+      min-width: 80px;
+      font-size: 10px;
     }
   }
 
