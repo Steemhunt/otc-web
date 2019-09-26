@@ -58,7 +58,7 @@ const ModalBody = props => {
           className={`price-change ${priceChangePercentage > 0 &&
             "plus"} ${priceChangePercentage < 0 && "minus"} `}
         >
-          {!Number.isNaN(priceChangePercentage) && (
+          {!Number.isNaN(priceChangePercentage) && priceChangePercentage !== 0 && (
             <Icon
               type={priceChangePercentage > 0 ? "caret-up" : "caret-down"}
             />
