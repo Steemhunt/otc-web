@@ -1,6 +1,6 @@
   {
-  "app_name": "DRG OTC",
-  "app_description": "P2P Token Trading",
+  "drg_otc": "DRG OTC",
+  "app_description": "OTC Token Trading",
   "search_coin": "Search Coin",
   "bitberry": "Bitberry",
   "enter_escrow_url": "Enter Escrow URL",
