@@ -8,7 +8,7 @@
   "purchase_coin": "Purchase {{coin}}",
   "unlisted": "Unlisted",
   "expires_at": "Expires at",
-  "status_ended": "Ended",
+  "status_ended": "Expired",
   "status_expired": "Expired",
   "status_completed": "Completed",
   "status_cancelled": "Cancelled",
