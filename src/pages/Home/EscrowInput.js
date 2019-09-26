@@ -32,23 +32,22 @@ const EscrowInput = props => {
   };
 
   return (
-    <div className="escrow-input">
+    <form
+      className="escrow-input"
+      onSubmit={e => {
+        e.preventDefault();
+        if (input.length > 0) {
+          postOffer(input, () => setInput(""));
+        }
+      }}
+    >
       <div className="hide-on-mobile input-url">
         <Input
           value={input}
           onChange={onChange}
           addonBefore={<SelectBefore t={t} />}
           placeholder={t("enter_escrow_url")}
-          addonAfter={
-            <div
-              className="add-button"
-              onClick={() => {
-                if (input.length > 0) postOffer(input, () => setInput(""));
-              }}
-            >
-              {t("add_trade")}
-            </div>
-          }
+          addonAfter={<div className="add-button">{t("add_trade")}</div>}
         />
       </div>
 
@@ -60,17 +59,11 @@ const EscrowInput = props => {
           placeholder={t("enter_escrow_url")}
         />
         <div className="button-container">
-          <Button
-            type="primary"
-            onClick={() => {
-              if (input.length > 0) postOffer(input, () => setInput(""));
-            }}
-          >
-            {t("add_trade")}
-          </Button>
+          <Button type="primary">{t("add_trade")}</Button>
         </div>
       </div>
-    </div>
+      <input type="submit" style={{ display: "none" }} />
+    </form>
   );
 };
 
