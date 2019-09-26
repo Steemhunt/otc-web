@@ -11,6 +11,7 @@
   "status_ended": "Ended",
   "status_expired": "Expired",
   "status_completed": "Completed",
+  "status_cancelled": "Cancelled",
   "margin": "Margin",
   "website": "Website",
   "whitepaper_ko": "Whitepaper (KO)",
