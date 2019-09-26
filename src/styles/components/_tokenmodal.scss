@@ -62,7 +62,7 @@
     .urls-container {
       display: flex;
       white-space: nowrap;
-      margin: 40px 0;
+      margin-top: 40px;
 
       .keys {
         margin-right: 20px;
@@ -91,18 +91,17 @@
       }
     }
 
-
     hr {
       color: 1px solid rgba(255, 255, 255, 0.2);
       margin: 40px 0;
     }
-
   }
 
   .exchange-btn {
     min-width: auto !important;
     color: #101117;
     border-radius: 0;
+    margin-top: 40px;
     &:hover {
       color: #000;
     }
