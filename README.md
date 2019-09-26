@@ -1,5 +1,5 @@
 # DRG OTC
-OTC Listing Board
+OTC (Over The Counter) Trading Listing Board
 
 ## License
 MIT License
