@@ -65,7 +65,7 @@ const ListItem = props => {
 
   if (sellingUSD && buyingUSD) {
     diff = sellingUSD - buyingUSD;
-    diffPercentage = (sellingUSD - buyingUSD) / sellingUSD;
+    diffPercentage = (buyingUSD - sellingUSD) / buyingUSD;
   }
 
   const variants = {
@@ -167,7 +167,7 @@ const ListItem = props => {
                     {diff > 0 && "+"}
                     {numeral(diff).format("$0,0.00")}
                     <span>
-                      ({diffPercentage > 0 && "+"}
+                      ({diff > 0 ? "+" : "-"}
                       {numeral(diffPercentage).format("0,0.00%")})
                     </span>
                   </>
