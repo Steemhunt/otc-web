@@ -9,7 +9,7 @@ module.exports = override(
   addLessLoader({
     javascriptEnabled: true,
     modifyVars: {
-      "@primary-color": "#f2a84b",
+      "@primary-color": "#f2a94a",
       "@font-family": "'Open Sans', sans-serif",
     }
   })
