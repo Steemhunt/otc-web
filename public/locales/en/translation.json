@@ -26,5 +26,10 @@
   "steemit": "Steemit",
   "reddit": "Reddit",
   "no_data": "Information for this coin doesn't exist. If you want it added, please contact",
-  "exchange_btn": "Listed Exchanges"
+  "exchange_btn": "Listed Exchanges",
+
+  "errors": {
+    "URL_NOT_SUPPORTED": "URL not supported",
+    "URL_ALREADY_LISTED": "Trade already registered"
+  }
 }

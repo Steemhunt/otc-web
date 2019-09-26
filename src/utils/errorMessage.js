@@ -1,10 +1,6 @@
+import React from "react";
 import { notification } from "antd";
-
-//temporary
-const errorMap =  {
-  "URL_NOT_SUPPORTED": "지원되지 않는 URL 입니다",
-  "URL_ALREADY_LISTED": "이미 등록되어있는 거래입니다"
-}
+import TranslatedErrorMessage from "components/TranslatedErrorMessage";
 
 export const extractErrorMessage = function(e) {
   const message = e.error_description || e.message || "";
@@ -19,6 +15,6 @@ export const extractErrorMessage = function(e) {
 
 export const handleErrorMessage = e => {
   notification["error"]({
-    message: errorMap[extractErrorMessage(e)] || extractErrorMessage(e)
+    message: <TranslatedErrorMessage error={extractErrorMessage(e)} />
   });
 };
