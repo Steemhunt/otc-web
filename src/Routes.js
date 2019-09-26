@@ -12,7 +12,7 @@ class Routes extends Component {
       <Suspense fallback={<CircularProgress />}>
         <div id="content-body" className="content-body">
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/*" exact component={Home} />
           </Switch>
           <Footer />
         </div>
