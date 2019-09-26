@@ -19,12 +19,24 @@ const EscrowInput = props => {
   const [input, setInput] = useState("");
   const { postOffer } = useContext(HomeContext);
 
+  const onChange = e => {
+    let str = e.target.value;
+    let regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+    let match = str.match(regex);
+    let finalString = match && match.length > 0 && match[0];
+    if (finalString) {
+      setInput(finalString);
+    } else {
+      setInput(str);
+    }
+  };
+
   return (
     <div className="escrow-input">
       <div className="hide-on-mobile input-url">
         <Input
           value={input}
-          onChange={e => setInput(e.target.value)}
+          onChange={onChange}
           addonBefore={<SelectBefore t={t} />}
           placeholder={t("enter_escrow_url")}
           addonAfter={
@@ -44,7 +56,7 @@ const EscrowInput = props => {
         <SelectBefore t={t} />
         <Input
           value={input}
-          onChange={e => setInput(e.target.value)}
+          onChange={onChange}
           placeholder={t("enter_escrow_url")}
         />
         <div className="button-container">
