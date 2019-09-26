@@ -9,9 +9,10 @@
   transition: all 150ms ease-in-out;
   white-space: nowrap;
   overflow: hidden;
+  opacity: 0.4 !important;
 
-  &.completed {
-    opacity: 0.4 !important;
+  &.waiting {
+    opacity: 1.0 !important;
   }
 
   button {
@@ -34,10 +35,10 @@
   .gradient-bar {
     width: 100%;
     height: 4px;
-    background-image: linear-gradient(to right, #f2994a, #f2c94c);
+    background-image: linear-gradient(to right, #818181, #4a4a4a);
 
-    &.completed {
-     background-image: linear-gradient(to right, #818181, #4a4a4a);
+    &.waiting, &.completed {
+     background-image: linear-gradient(to right, #f2994a, #f2c94c);
     }
   }
 
@@ -58,6 +59,10 @@
     width: 130px;
     text-align: center;
     font-size: 14px;
+
+    &.completed {
+      color: $green;
+    }
   }
 
   .content {

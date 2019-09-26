@@ -73,16 +73,20 @@ const ListItem = props => {
     visible: { opacity: 1, y: 0 }
   };
 
+  let clientStatus = status;
+  if (status === "waiting" && timer === -1) {
+   clientStatus ="expired";
+  }
+
   return (
     <motion.div
       variants={variants}
       initial="hidden"
       animate="visible"
       transition={{ ease: "easeIn", duration: 0.2, delay: 0.1 * index }}
-      className={`list-item ${(status !== "waiting" || timer === -1) &&
-        "completed"}`}
+      className={`list-item ${status}`}
     >
-      <div className={`gradient-bar ${status !== "waiting" && "completed"}`}>
+      <div className={`gradient-bar ${status}`}>
         {/*<div className="filled" />*/}
       </div>
       <div className="content">
@@ -177,24 +181,18 @@ const ListItem = props => {
               </div>
             </div>
           </div>
-          {status === "waiting" && timer !== -1 && (
+          {status === "waiting" ? (
             <a href={escrow_url} target="_blank" rel="noopener noreferrer">
               <Button>
                 <Trans i18nKey="purchase_coin">
-                  Purchase {{ coin: selling_coin.symbol }}
+                  Buy {{ coin: selling_coin.symbol }}
                 </Trans>
               </Button>
             </a>
-          )}
-          {status === "completed" && (
-            <div className="status-text">{t("status_completed")}</div>
-          )}
-
-          {status === "canceled" && (
-            <div className="status-text">{t("status_cancelled")}</div>
-          )}
-          {(status === "expired" || (status === "waiting" && timer === -1)) && (
-            <div className="status-text">{t("status_expired")}</div>
+          ) : (
+            <div className={`status-text ${status}`}>
+              {t(`status_${status}`)}
+            </div>
           )}
         </div>
       </div>
