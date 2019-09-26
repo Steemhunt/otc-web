@@ -28,8 +28,7 @@
   .gradient-bar {
     width: 100%;
     height: 4px;
-    // background-image: linear-gradient(to right, #818181, #4a4a4a);
-    background-image: linear-gradient(to right, #04a5c0, #f9f981);
+    background-image: linear-gradient(to right, #f2994a, #f2c94c);
 
     &.completed {
      background-image: linear-gradient(to right, #818181, #4a4a4a);
@@ -39,7 +38,7 @@
   .filled {
     width: 0%;
     height: 100%;
-    background-image: linear-gradient(to right, #04a5c0, #f9f981);
+    background-image: linear-gradient(to right, #f2994a, #f2c94c);
   }
 
   &:hover {
