@@ -1,19 +1,22 @@
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
+import Footer from "components/Footer";
+import CircularProgress from "components/CircularProgress";
 import asyncComponent from "asyncComponent";
 
 const Home = asyncComponent(() => import("pages/Home"));
-const Footer = asyncComponent(() => import("components/Footer"));
 
 class Routes extends Component {
   render() {
     return (
-      <div id="content-body" className="content-body">
-        <Switch>
-          <Route path="/" exact component={Home} />
-        </Switch>
-        <Footer />
-      </div>
+      <Suspense fallback={<CircularProgress />}>
+        <div id="content-body" className="content-body">
+          <Switch>
+            <Route path="/" exact component={Home} />
+          </Switch>
+          <Footer />
+        </div>
+      </Suspense>
     );
   }
 }

@@ -4,9 +4,11 @@ import numeral from "numeral";
 import { Icon, Button } from "antd";
 import moment from "moment";
 import { motion } from "framer-motion";
+import { Trans, useTranslation } from "react-i18next";
 import _ from "lodash";
 
 const ListItem = props => {
+  const { t } = useTranslation();
   const [timer, setTimer] = useState("00:00:00");
   const {
     index,
@@ -121,7 +123,11 @@ const ListItem = props => {
                 />
               </div>
               <div className="usd">
-                ({buyingUSD ? numeral(buyingUSD).format("$0,0.00") : "비상장"})
+                (
+                {buyingUSD
+                  ? numeral(buyingUSD).format("$0,0.00")
+                  : t("unlisted")}
+                )
               </div>
             </div>
           </div>
@@ -130,11 +136,13 @@ const ListItem = props => {
         <div className="right-container">
           <div className="stat-container">
             <div>
-              <div className="text-grey side-header">만료:</div>
-              <div className="text-grey side-header">거래차익:</div>
+              <div className="text-grey side-header">{t("expires_at")}</div>
+              <div className="text-grey side-header">{t("margin")}</div>
             </div>
             <div className="values">
-              <div className="timer">{timer === -1 ? "종료" : timer}</div>
+              <div className="timer">
+                {timer === -1 ? t("status_ended") : timer}
+              </div>
               <div
                 className={`difference ${diff > 0 && "plus"} ${diff < 0 &&
                   "minus"}`}
@@ -156,16 +164,22 @@ const ListItem = props => {
           </div>
           {status === "waiting" && timer !== -1 && (
             <a href={escrow_url} target="_blank" rel="noopener noreferrer">
-              <Button>{selling_coin.symbol} 구매</Button>
+              <Button>
+                <Trans i18nKey="purchase_coin">
+                  Purchase {{ coin: selling_coin.symbol }}
+                </Trans>
+              </Button>
             </a>
           )}
           {status === "completed" && (
-            <div className="status-text">거래완료</div>
+            <div className="status-text">{t("status_completed")}</div>
           )}
 
-          {status === "canceled" && <div className="status-text">취소됨</div>}
+          {status === "canceled" && (
+            <div className="status-text">{t("status_cancelled")}</div>
+          )}
           {(status === "expired" || (status === "waiting" && timer === -1)) && (
-            <div className="status-text">만료됨</div>
+            <div className="status-text">{t("status_expired")}</div>
           )}
         </div>
       </div>

@@ -5,12 +5,16 @@
   "dependencies": {
     "antd": "^3.22.2",
     "framer-motion": "^1.6.7",
+    "i18next": "^17.0.16",
+    "i18next-browser-languagedetector": "^3.0.3",
+    "i18next-xhr-backend": "^3.2.0",
     "js-sha256": "^0.9.0",
     "lodash": "^4.17.15",
     "moment-duration-format": "^2.3.2",
     "numeral": "^2.0.6",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-i18next": "^10.13.0",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^5.0.1"
   },

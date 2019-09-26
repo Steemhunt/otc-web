@@ -2,6 +2,7 @@
   @include responsive(tiny) {
     text-align: center;
   }
+
   input {
     height: 48px;
     background-color: transparent;
@@ -15,7 +16,7 @@
   }
 
   input::placeholder {
-    color: rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, 0.2);
   }
 
   .ant-input-group-wrapper {
@@ -33,9 +34,16 @@
     }
   }
 
+  .ant-select-enabled {
+    width: 130px !important;
+    @include responsive(mobile) {
+      width: 200px !important;
+    }
+  }
+
   .ant-select-selection {
     @include responsive(mobile) {
-      width: 200px;
+      width: 200px !important;
       background-color: transparent;
       margin-top: 2rem;
       border-radius: 0;

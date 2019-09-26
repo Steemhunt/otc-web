@@ -4,6 +4,7 @@ import './custom.css';
 import moment from "moment";
 import momentDurationFormatSetup from "moment-duration-format";
 import 'moment/locale/ko';
+import "i18n"
 moment.locale("ko")
 momentDurationFormatSetup(moment);
 

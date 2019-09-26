@@ -1,24 +1,32 @@
 import React, { useState, useContext } from "react";
 import HomeContext from "contexts/HomeContext";
 import { Button, Input, Select } from "antd";
+import { useTranslation } from "react-i18next";
 const { Option } = Select;
 
-const selectBefore = (
-  <Select defaultValue="비트베리" style={{ width: 90 }}>
-    <Option value="비트베리">비트베리</Option>
+const SelectBefore = props => (
+  <Select
+    className={props.className}
+    value={props.t("bitberry")}
+    style={{ width: 90 }}
+  >
+    <Option value={props.t("bitberry")}>{props.t("bitberry")}</Option>
   </Select>
 );
+
 const EscrowInput = props => {
+  const { t } = useTranslation();
   const [input, setInput] = useState("");
   const { postOffer } = useContext(HomeContext);
+
   return (
     <div className="escrow-input">
       <div className="hide-on-mobile input-url">
         <Input
           value={input}
           onChange={e => setInput(e.target.value)}
-          addonBefore={selectBefore}
-          placeholder="에스크로 URL 입력"
+          addonBefore={<SelectBefore t={t} />}
+          placeholder={t("enter_escrow_url")}
           addonAfter={
             <div
               className="add-button"
@@ -26,27 +34,27 @@ const EscrowInput = props => {
                 if (input.length > 0) postOffer(input, () => setInput(""));
               }}
             >
-              거래 추가
+              {t("add_trade")}
             </div>
           }
         />
       </div>
 
       <div className="show-on-mobile">
-        <div>
-          <Select className="mobile-select" defaultValue="비트베리">
-            <Option value="비트베리">비트베리</Option>
-          </Select>
-        </div>
+        <SelectBefore t={t} />
         <Input
           value={input}
           onChange={e => setInput(e.target.value)}
-          placeholder="에스크로 URL 입력" />
+          placeholder={t("enter_escrow_url")}
+        />
         <div className="button-container">
-          <Button type="primary" onClick={() => {
-            if (input.length > 0) postOffer(input, () => setInput(""));
-          }}>
-            거래 추가
+          <Button
+            type="primary"
+            onClick={() => {
+              if (input.length > 0) postOffer(input, () => setInput(""));
+            }}
+          >
+            {t("add_trade")}
           </Button>
         </div>
       </div>

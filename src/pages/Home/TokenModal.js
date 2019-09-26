@@ -1,27 +1,14 @@
 import React, { useContext } from "react";
 import HomeContext from "contexts/HomeContext";
-import AppContext from "contexts/AppContext";
 import { Modal, Icon } from "antd";
 import numeral from "numeral";
 import _ from "lodash";
-
-const textMap = {
-  website: "웹사이트",
-  whitepaper_ko: "백서 (한글)",
-  whitepaper_en: "백서 (영문)",
-  github: "깃헙",
-  app_1: "앱1",
-  app_2: "앱2",
-  telegram: "텔레그램",
-  kakaotalk: "카카오톡",
-  discord: "디스코드",
-  twitter: "트위터",
-  steemit: "스팀잇",
-  reddit: "레딧"
-};
+import { Trans, useTranslation } from "react-i18next";
 
 const ModalBody = props => {
-  const { language } = useContext(AppContext);
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
+
   const { data } = props;
   if (!data) return null;
   let {
@@ -39,7 +26,6 @@ const ModalBody = props => {
 
   const priceChangePercentage =
     price_change_24h / (last_price - price_change_24h);
-
 
   Object.entries(urls).forEach(data => {
     const [key, url] = data;
@@ -95,9 +81,7 @@ const ModalBody = props => {
         <div className="urls-container">
           <div className="keys">
             {urlKeys.map((key, index) => (
-              <div key={index}>
-                {textMap[key] ? textMap[key] : _.camelCase(key)}
-              </div>
+              <div key={index}>{t(key) || _.camelCase(key)}</div>
             ))}
           </div>
           <div className="ellipsis">
@@ -114,15 +98,17 @@ const ModalBody = props => {
 
       {noData && (
         <div className="no-data">
-          데이터가 존재하지않습니다. 만약 데이터 추가를 원하시면{" "}
-          <a
-            href="mailto:admin@hunt.town"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            admin@hunt.town
-          </a>{" "}
-          으로 요청해주시기 바랍니다.
+          <Trans i18nKey="no_data">
+            데이터가 존재하지않습니다. 만약 데이터 추가를 원하시면
+            <a
+              href="mailto:admin@hunt.town"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              admin@hunt.town
+            </a>{" "}
+            으로 요청해주시기 바랍니다.
+          </Trans>
         </div>
       )}
     </div>

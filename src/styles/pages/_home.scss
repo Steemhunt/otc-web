@@ -4,8 +4,8 @@
   padding-bottom: 160px;
 
   @include responsive(mobile) {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .title {
@@ -34,6 +34,9 @@
   .squirrel {
     position: absolute;
     bottom: -4px;
+    width: 70px;
+    white-space: nowrap;
+    text-align: right;
     background-image: linear-gradient(to bottom, #04a5c0, $primary);
     font-size: .9rem;
     background-clip: text;

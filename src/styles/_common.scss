@@ -64,6 +64,10 @@ a {
   color: #3fcaff;
 }
 
+.primary {
+  color: $primary;
+}
+
 .col-justify-between {
   display: flex;
   flex-direction: column;
@@ -150,7 +154,7 @@ a {
 .hover-link {
   &:hover {
     cursor: pointer;
-    color: #ee0804;
+    color: $primary;
     // transition: color 0.5s;
   }
 }
@@ -203,7 +207,8 @@ a {
   }
 }
 
-.ellipsis {white-space: nowrap;
+.ellipsis {
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
