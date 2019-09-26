@@ -5,7 +5,7 @@
   "bitberry": "Bitberry",
   "enter_escrow_url": "Enter Escrow URL",
   "add_trade": "Add Trade",
-  "purchase_coin": "Purchase {{coin}}",
+  "purchase_coin": "Buy {{coin}}",
   "unlisted": "Unlisted",
   "expires_at": "Expires at",
   "status_ended": "Expired",
