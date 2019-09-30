@@ -64,24 +64,28 @@ const ModalBody = props => {
             </>
           )}
         </div>
-        <div
-          className={`price-change ${priceChangePercentage > 0 &&
-            "plus"} ${priceChangePercentage < 0 && "minus"} `}
-        >
-          {!Number.isNaN(priceChangePercentage) &&
-            priceChangePercentage !== 0 && (
-              <Icon
-                type={priceChangePercentage > 0 ? "caret-up" : "caret-down"}
-              />
-            )}
-          {price_change_24h}
-          <span className="price-change-percentage">
-            ({numeral(priceChangePercentage).format("0,0.00%")})
-          </span>
-        </div>
-        <div className="total-supply">
-          Total Supply: {numeral(total_supply).format("0,0")} {symbol}
-        </div>
+        {!unlisted &&
+          <div
+            className={`price-change ${priceChangePercentage > 0 &&
+              "plus"} ${priceChangePercentage < 0 && "minus"} `}
+          >
+            {!Number.isNaN(priceChangePercentage) &&
+              priceChangePercentage !== 0 && (
+                <Icon
+                  type={priceChangePercentage > 0 ? "caret-up" : "caret-down"}
+                />
+              )}
+            {price_change_24h}
+            <span className="price-change-percentage">
+              ({numeral(priceChangePercentage).format("0,0.00%")})
+            </span>
+          </div>
+        }
+        {total_supply > 0 &&
+          <div className="total-supply">
+            Total Supply: {numeral(total_supply).format("0,0")} {symbol}
+          </div>
+        }
       </div>
 
       <hr />
