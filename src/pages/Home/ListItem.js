@@ -95,7 +95,7 @@ const ListItem = props => {
             <img
               className="from-coin"
               alt=""
-              src={`${process.env.PUBLIC_URL}/coins/${_.lowerCase(
+              src={`${process.env.PUBLIC_URL}/coins/${_.toLower(
                 selling_coin.symbol
               )}.png`}
             />
@@ -126,7 +126,7 @@ const ListItem = props => {
             <img
               className="to-coin"
               alt=""
-              src={`${process.env.PUBLIC_URL}/coins/${_.lowerCase(
+              src={`${process.env.PUBLIC_URL}/coins/${_.toLower(
                 buying_coin.symbol
               )}.png`}
             />
