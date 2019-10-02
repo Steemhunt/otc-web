@@ -8,11 +8,6 @@
   font-size: 12px;
   margin-bottom: 40px;
 
-  .toggle-language {
-    display: flex;
-    margin-bottom: 10px;
-  }
-
   @include responsive(mobile) {
     padding-bottom: 80px;
   }

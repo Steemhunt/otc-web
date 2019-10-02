@@ -4,7 +4,9 @@ import EscrowInput from "./EscrowInput";
 import TokenModal from "./TokenModal";
 import OfferList from "./OfferList";
 import SearchBar from "./SearchBar";
+import LanguageToggle from "components/LanguageToggle";
 import { useTranslation } from "react-i18next";
+import { Icon } from "antd";
 import Logo from "./Logo";
 
 const Home = props => {
@@ -19,10 +21,16 @@ const Home = props => {
       <div className="padded-container content">
         <div className="search-bar-container">
           <Logo />
+          <LanguageToggle />
           <SearchBar />
         </div>
         <div className="title">{t("app_description")}</div>
         <EscrowInput />
+        <div className="links">
+          <a href={t("how_to_bitberry_url")} target="_blank" rel="noopener noreferrer">
+            {t("how_to_bitberry")} <Icon type="question-circle" />
+          </a>
+        </div>
         <OfferList />
       </div>
       <TokenModal />
