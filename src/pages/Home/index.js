@@ -27,6 +27,9 @@ const Home = props => {
         <div className="title">{t("app_description")}</div>
         <EscrowInput />
         <div className="links">
+          <a href="https://t.me/drgotc" target="_blank" rel="noopener noreferrer">
+            {t("get_telegram")} <Icon type="right-circle" />
+          </a>
           <a href={t("how_to_bitberry_url")} target="_blank" rel="noopener noreferrer">
             {t("how_to_bitberry")} <Icon type="question-circle" />
           </a>

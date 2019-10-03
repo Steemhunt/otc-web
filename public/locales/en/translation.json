@@ -1,6 +1,7 @@
 {
   "drg_otc": "DRG OTC",
   "app_description": "Bitberry Wallet OTC (P2P) Trading",
+  "get_telegram": "Get Telegram Notification",
   "how_to_bitberry_url": "https://medium.com/bitberry/bitberry-update-3-en-dac4c01147fb",
   "how_to_bitberry": "How to create a new trade",
   "search_coin": "Search Coin",
