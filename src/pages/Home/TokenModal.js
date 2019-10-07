@@ -113,22 +113,27 @@ const ModalBody = props => {
         </div>
       )}
 
-      {noData && (
-        <div className="no-data">
+      {!noData && <hr/>}
+
+      <div>
+        {noData ?
           <Trans i18nKey="no_data">
-            데이터가 존재하지않습니다. 만약 데이터 추가를 원하시면 밑 이메일 주소로 요청해주시기 바랍니다.
+            데이터가 존재하지않습니다. 데이터 추가를 원하시면 이메일 주소로 요청해주시기 바랍니다
           </Trans>
-          {" "}
-           <a
-              href="mailto:admin@hunt.town"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              admin@hunt.town
-            </a>
-            .
-        </div>
-      )}
+        :
+          <Trans i18nKey="change_request">
+            정보 변경을 원하시면 다음 이메일 주소로 요청해주시기 바랍니다
+          </Trans>
+        }
+        {" "}
+        <a
+          href="mailto:admin@hunt.town"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          admin@hunt.town
+        </a>.
+      </div>
 
       {coingecko_id && (
         <a
