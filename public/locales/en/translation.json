@@ -38,6 +38,7 @@
 
   "errors": {
     "URL_NOT_SUPPORTED": "URL not supported",
+    "INVALID_URL": "Invalid URL",
     "URL_ALREADY_LISTED": "Trade already registered"
   }
 }

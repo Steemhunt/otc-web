@@ -38,6 +38,7 @@
 
   "errors": {
     "URL_NOT_SUPPORTED": "지원되지 않는 URL 입니다",
+    "INVALID_URL": "잘못된 URL 입니다.",
     "URL_ALREADY_LISTED": "이미 등록되어있는 거래입니다"
   }
 }
