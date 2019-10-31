@@ -15,6 +15,7 @@
   "status_expired": "만료됨",
   "status_completed": "거래완료",
   "status_canceled": "취소됨",
+  "status_processing": "거래중",
   "margin": "거래차익",
   "website": "웹사이트",
   "whitepaper_ko": "백서 (한글)",
